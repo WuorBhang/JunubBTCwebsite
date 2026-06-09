@@ -226,13 +226,13 @@ export default function NetworkPage() {
         return (
             <div
                 key={label}
-                className="flex items-center justify-between py-5 border-b border-[#F5F5F5]/10 last:border-b-0"
+                className="flex items-center justify-between gap-3 py-4 sm:py-5 border-b border-[#F5F5F5]/10 last:border-b-0"
             >
-                <span className="inline-flex items-center gap-3 text-[#F5F5F5]/70 text-sm">
-                    <Icon className="w-4 h-4 text-[#F7931A]" />
-                    {label}
+                <span className="inline-flex items-center gap-2 sm:gap-3 text-[#F5F5F5]/70 text-xs sm:text-sm min-w-0">
+                    <Icon className="w-4 h-4 text-[#F7931A] shrink-0" />
+                    <span className="truncate">{label}</span>
                 </span>
-                <span className="inline-flex items-center gap-2 text-[#F5F5F5] font-medium text-xs md:text-sm tabular-nums">
+                <span className="inline-flex items-center gap-2 text-[#F5F5F5] font-medium text-xs sm:text-sm tabular-nums shrink-0">
                     <span
                         className={`w-2 h-2 rounded-full ${stateDot(state)} ${state === 'online' ? 'animate-pulse' : ''
                             }`}
@@ -257,10 +257,10 @@ export default function NetworkPage() {
             )}
 
             {/* Top stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-                <div className="md:col-span-2 bg-black rounded-2xl p-8 md:p-10">
-                    <div className="flex items-center justify-between mb-6">
-                        <p className="inline-flex items-center gap-2 text-[#F5F5F5]/60 text-sm uppercase tracking-wider">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 sm:mb-10">
+                <div className="md:col-span-2 bg-black rounded-2xl p-6 sm:p-8 md:p-10">
+                    <div className="flex items-center justify-between mb-5 sm:mb-6 gap-3">
+                        <p className="inline-flex items-center gap-2 text-[#F5F5F5]/60 text-xs sm:text-sm uppercase tracking-wider">
                             <Radio className="w-4 h-4 text-[#F7931A]" />
                             Bitcoin tip height
                         </p>
@@ -268,7 +268,7 @@ export default function NetworkPage() {
                             type="button"
                             onClick={load}
                             disabled={loading}
-                            className="inline-flex items-center gap-2 text-[#F5F5F5]/60 hover:text-[#F5F5F5] text-xs transition-colors duration-200 disabled:opacity-50"
+                            className="inline-flex items-center gap-2 text-[#F5F5F5]/60 hover:text-[#F5F5F5] text-xs transition-colors duration-200 disabled:opacity-50 shrink-0"
                         >
                             <RefreshCw
                                 className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`}
@@ -277,12 +277,12 @@ export default function NetworkPage() {
                         </button>
                     </div>
                     <p
-                        className="text-[#F5F5F5] text-6xl md:text-7xl font-medium tabular-nums"
+                        className="text-[#F5F5F5] text-5xl sm:text-6xl md:text-7xl font-medium tabular-nums"
                         style={{ letterSpacing: '-0.04em' }}
                     >
                         #{blockHeight ? blockHeight.toLocaleString('en-US') : '—'}
                     </p>
-                    <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-[#F5F5F5]/50 text-sm">
+                    <div className="mt-4 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 text-[#F5F5F5]/50 text-xs sm:text-sm">
                         <span>
                             Last block: {tipBlock ? formatRelative(secondsSinceLastBlock ?? 0) : '—'}
                         </span>
@@ -300,20 +300,20 @@ export default function NetworkPage() {
                         )}
                     </div>
                 </div>
-                <div className="bg-white rounded-2xl p-8 flex flex-col justify-between border border-black/5">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-black/5">
                     <div>
-                        <p className="text-black/60 text-sm uppercase tracking-wider mb-2">
+                        <p className="text-black/60 text-xs sm:text-sm uppercase tracking-wider mb-2">
                             Recommended fee
                         </p>
                         <p
-                            className="text-black text-5xl font-medium tabular-nums"
+                            className="text-black text-4xl sm:text-5xl font-medium tabular-nums"
                             style={{ letterSpacing: '-0.04em' }}
                         >
                             {fees ? `${fees.halfHourFee}` : '—'}
                         </p>
-                        <p className="text-black/60 text-sm mt-2">sat/vB · ~30 min target</p>
+                        <p className="text-black/60 text-xs sm:text-sm mt-2">sat/vB · ~30 min target</p>
                     </div>
-                    <div className="text-black/60 text-xs mt-6 grid grid-cols-3 gap-2 tabular-nums">
+                    <div className="text-black/60 text-xs mt-5 sm:mt-6 grid grid-cols-3 gap-2 tabular-nums">
                         <div>
                             <p className="text-black font-medium">{fees?.fastestFee ?? '—'}</p>
                             <p>fast</p>
@@ -331,10 +331,10 @@ export default function NetworkPage() {
             </div>
 
             {/* Status board */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
-                <div className="bg-black rounded-2xl p-8 md:p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12 sm:mb-16">
+                <div className="bg-black rounded-2xl p-6 sm:p-8 md:p-10">
                     <h3
-                        className="text-[#F5F5F5] text-2xl md:text-3xl font-medium mb-6"
+                        className="text-[#F5F5F5] text-xl sm:text-2xl md:text-3xl font-medium mb-5 sm:mb-6"
                         style={{ letterSpacing: '-0.02em' }}
                     >
                         Bridge infrastructure
@@ -342,9 +342,9 @@ export default function NetworkPage() {
                     {bridgeServices.map((s) => statRow(s.icon, s.label, s.state))}
                 </div>
 
-                <div className="bg-black rounded-2xl p-8 md:p-10">
+                <div className="bg-black rounded-2xl p-6 sm:p-8 md:p-10">
                     <h3
-                        className="text-[#F5F5F5] text-2xl md:text-3xl font-medium mb-6"
+                        className="text-[#F5F5F5] text-xl sm:text-2xl md:text-3xl font-medium mb-5 sm:mb-6"
                         style={{ letterSpacing: '-0.02em' }}
                     >
                         Mobile Money rails
@@ -354,20 +354,20 @@ export default function NetworkPage() {
             </div>
 
             {/* How status powers the news */}
-            <div className="bg-white rounded-2xl p-8 md:p-12 border border-black/5">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-12 border border-black/5">
                 <h3
-                    className="text-black text-3xl md:text-4xl font-medium mb-4"
+                    className="text-black text-2xl sm:text-3xl md:text-4xl font-medium mb-4"
                     style={{ letterSpacing: '-0.03em' }}
                 >
                     Why this matters
                 </h3>
-                <p className="text-black/70 text-base md:text-lg leading-relaxed max-w-3xl mb-4">
+                <p className="text-black/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mb-4">
                     Every JunubBTC payment depends on these eight services being green at
                     the same moment. Because we are non-custodial, when any of them go
                     red, the user simply sees a clear error in their wallet and no SSP
                     moves — your sats stay put.
                 </p>
-                <p className="text-black/70 text-base md:text-lg leading-relaxed max-w-3xl">
+                <p className="text-black/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl">
                     The Bitcoin tip height and fee rates above feed the calculator on the
                     home page in real time, so the SSP quote you see is always priced
                     against the latest block and the live Lightning routing cost.

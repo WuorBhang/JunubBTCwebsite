@@ -9,7 +9,7 @@ import UseCasesSection from '../components/UseCasesSection';
 export default function HomePage() {
     return (
         <>
-            <div className="h-screen flex flex-col overflow-hidden relative">
+            <div className="min-h-screen flex flex-col relative">
                 <Navbar current="home" overlay />
                 <HeroSection />
             </div>

@@ -74,10 +74,10 @@ const BRANDS: Array<{
 
 export default function HeroSection() {
     return (
-        <section className="flex-1 px-6 pt-20 pb-6 flex items-end">
+        <section className="flex-1 px-4 sm:px-6 pt-20 sm:pt-20 pb-4 sm:pb-6 flex items-end">
             <div className="max-w-[88rem] mx-auto w-full">
                 <div
-                    className="relative w-full rounded-2xl overflow-hidden"
+                    className="relative w-full rounded-2xl overflow-hidden min-h-[560px] sm:min-h-[640px]"
                     style={{ height: 'calc(100vh - 100px)' }}
                 >
                     <video
@@ -98,9 +98,9 @@ export default function HeroSection() {
                         style={{ backgroundColor: 'rgba(250, 141, 8, 0.5)' }}
                     />
 
-                    <div className="relative z-10 flex flex-col items-start justify-start h-full p-12 pt-36">
+                    <div className="relative z-10 flex flex-col items-start justify-start h-full p-6 sm:p-10 md:p-12 pt-24 sm:pt-32 md:pt-36">
                         <h1
-                            className="text-[#F5F5F5] text-5xl md:text-6xl font-medium leading-tight max-w-xl mb-4 drop-shadow-lg"
+                            className="text-[#F5F5F5] text-4xl sm:text-5xl md:text-6xl font-medium leading-tight max-w-xl mb-4 drop-shadow-lg"
                             style={{ letterSpacing: '-0.04em' }}
                         >
                             Bitcoin Spends
@@ -109,7 +109,7 @@ export default function HeroSection() {
                         </h1>
 
                         <p
-                            className="text-[#F5F5F5]/90 text-base md:text-lg max-w-md mb-8 leading-relaxed drop-shadow"
+                            className="text-[#F5F5F5]/90 text-sm sm:text-base md:text-lg max-w-md mb-6 sm:mb-8 leading-relaxed drop-shadow"
                             style={{
                                 fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif",
                             }}
@@ -121,11 +121,11 @@ export default function HeroSection() {
 
                         <a
                             href="/momo"
-                            className="inline-flex items-center gap-3 bg-black text-[#F5F5F5] text-base md:text-lg font-medium pl-8 pr-2 py-2 rounded-full hover:bg-black/80 transition-colors duration-200"
+                            className="inline-flex items-center gap-3 bg-black text-[#F5F5F5] text-sm sm:text-base md:text-lg font-medium pl-6 sm:pl-8 pr-2 py-2 rounded-full hover:bg-black/80 transition-colors duration-200"
                         >
                             Get the App
-                            <span className="bg-[#F5F5F5] rounded-full p-2 flex items-center justify-center">
-                                <ArrowRight className="w-5 h-5 text-black" />
+                            <span className="bg-[#F5F5F5] rounded-full p-1.5 sm:p-2 flex items-center justify-center">
+                                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
                             </span>
                         </a>
 
@@ -139,7 +139,7 @@ export default function HeroSection() {
 
 function BrandMarquee() {
     return (
-        <div className="mt-24 w-full max-w-md overflow-hidden">
+        <div className="mt-12 sm:mt-16 md:mt-24 w-full max-w-md overflow-hidden">
             <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }

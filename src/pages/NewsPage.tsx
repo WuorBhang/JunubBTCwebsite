@@ -102,21 +102,21 @@ export default function NewsPage() {
             intro="A live feed of the latest Bitcoin, Lightning and on-chain stories pulled straight from Hacker News — refreshed every five minutes."
         >
             {/* Price + refresh strip */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-                <div className="md:col-span-2 bg-black rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 sm:mb-10">
+                <div className="md:col-span-2 bg-black rounded-2xl p-5 sm:p-6 md:p-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
                     <div>
                         <p className="text-[#F5F5F5]/60 text-sm mb-2">
                             BTC / USD · live spot
                         </p>
-                        <div className="flex items-baseline gap-4 flex-wrap">
+                        <div className="flex items-baseline gap-3 sm:gap-4 flex-wrap">
                             <span
-                                className="text-[#F5F5F5] text-5xl md:text-6xl font-medium tabular-nums"
+                                className="text-[#F5F5F5] text-4xl sm:text-5xl md:text-6xl font-medium tabular-nums"
                                 style={{ letterSpacing: '-0.04em' }}
                             >
                                 {formattedPrice}
                             </span>
                             {price && (
-                                <span className={`text-base font-medium ${changeColor}`}>
+                                <span className={`text-sm sm:text-base font-medium ${changeColor}`}>
                                     {change >= 0 ? '+' : ''}
                                     {change.toFixed(2)}% 24h
                                 </span>
@@ -128,10 +128,10 @@ export default function NewsPage() {
                     </p>
                 </div>
 
-                <div className="bg-white rounded-2xl p-6 md:p-8 flex flex-col justify-between border border-black/5">
+                <div className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 flex flex-col justify-between border border-black/5">
                     <div>
                         <p className="text-black/60 text-sm mb-1">Feed updated</p>
-                        <p className="text-black text-2xl font-medium tabular-nums">
+                        <p className="text-black text-xl sm:text-2xl font-medium tabular-nums">
                             {updatedAt
                                 ? updatedAt.toLocaleTimeString('en-US', {
                                     hour: '2-digit',
@@ -164,7 +164,7 @@ export default function NewsPage() {
 
             {/* Stories grid */}
             {loading && stories.length === 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {Array.from({ length: 6 }).map((_, i) => (
                         <div
                             key={i}
@@ -173,7 +173,7 @@ export default function NewsPage() {
                     ))}
                 </div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {stories.map((s) => {
                         const href =
                             s.url || `https://news.ycombinator.com/item?id=${s.objectID}`;
@@ -183,23 +183,23 @@ export default function NewsPage() {
                                 href={href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-white rounded-2xl p-6 flex flex-col justify-between min-h-[200px] group hover:bg-[#F7931A] hover:text-[#F5F5F5] border border-black/5 transition-colors duration-200"
+                                className="bg-white rounded-2xl p-5 sm:p-6 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] group hover:bg-[#F7931A] hover:text-[#F5F5F5] border border-black/5 transition-colors duration-200"
                             >
                                 <div>
-                                    <div className="flex items-center justify-between mb-4 text-xs text-black/50">
-                                        <span className="uppercase tracking-wider">
+                                    <div className="flex items-center justify-between mb-3 sm:mb-4 text-xs text-black/50">
+                                        <span className="uppercase tracking-wider truncate max-w-[60%]">
                                             {host(s.url)}
                                         </span>
                                         <span>{timeAgo(s.created_at)}</span>
                                     </div>
                                     <h3
-                                        className="text-black text-lg md:text-xl font-medium leading-snug"
+                                        className="text-black text-base sm:text-lg md:text-xl font-medium leading-snug"
                                         style={{ letterSpacing: '-0.02em' }}
                                     >
                                         {s.title}
                                     </h3>
                                 </div>
-                                <div className="flex items-center justify-between mt-6 text-sm text-black/60">
+                                <div className="flex items-center justify-between mt-5 sm:mt-6 text-sm text-black/60">
                                     <div className="flex items-center gap-4">
                                         <span className="inline-flex items-center gap-1">
                                             <ThumbsUp className="w-3.5 h-3.5" />

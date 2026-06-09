@@ -20,21 +20,21 @@ export default function Footer() {
     const blockHeight = 890_000 + (year - 2026) * 52_560;
 
     return (
-        <footer className="bg-black text-[#F5F5F5] px-6 pt-16 pb-10">
+        <footer className="bg-black text-[#F5F5F5] px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-10">
             <div className="max-w-[88rem] mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 sm:gap-10 mb-12 sm:mb-16">
                     {/* Brand */}
-                    <div className="md:col-span-5">
-                        <div className="flex items-center gap-2 mb-5">
-                            <LogoIcon className="w-7 h-7 text-[#F7931A]" />
-                            <span className="text-2xl font-medium tracking-tight text-[#F5F5F5]">
+                    <div className="sm:col-span-2 md:col-span-5">
+                        <div className="flex items-center gap-2 mb-4 sm:mb-5">
+                            <LogoIcon className="w-6 h-6 sm:w-7 sm:h-7 text-[#F7931A]" />
+                            <span className="text-xl sm:text-2xl font-medium tracking-tight text-[#F5F5F5]">
                                 JunubBTC
                             </span>
                         </div>
-                        <p className="text-[#F5F5F5]/80 text-base leading-relaxed max-w-sm mb-6">
+                        <p className="text-[#F5F5F5]/80 text-sm sm:text-base leading-relaxed max-w-sm mb-6">
                             JunubBTC is a non-custodial Lightning-to-Fiat bridge for South
                             Sudan. Shielding local wealth and connecting the Nile valley
-                            economy to Bitcoin since {year}.
+                            economy to Bitcoin in {year}.
                         </p>
                         {/* <p className="text-[#F5F5F5]/60 text-sm leading-relaxed max-w-sm">
                             Built for presentation at{' '}
@@ -82,23 +82,23 @@ export default function Footer() {
                     </div>
 
                     {/* Network Status */}
-                    <div className="md:col-span-3">
+                    <div className="sm:col-span-2 md:col-span-3">
                         <h4 className="text-[#F5F5F5] text-sm font-medium mb-4">
                             Network status
                         </h4>
                         <ul className="space-y-3 text-sm">
-                            <li className="flex items-center justify-between">
+                            <li className="flex items-center justify-between gap-3">
                                 <span className="text-[#F5F5F5]/60">Lightning Node</span>
-                                <span className="inline-flex items-center gap-2 text-[#F5F5F5] font-medium">
+                                <span className="inline-flex items-center gap-2 text-[#F5F5F5] font-medium shrink-0">
                                     <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
                                     ONLINE
                                 </span>
                             </li>
-                            <li className="flex items-center justify-between">
+                            <li className="flex items-center justify-between gap-3">
                                 <span className="text-[#F5F5F5]/60">
                                     MTN Settlement Gateway
                                 </span>
-                                <span className="inline-flex items-center gap-2 text-[#F5F5F5] font-medium">
+                                <span className="inline-flex items-center gap-2 text-[#F5F5F5] font-medium shrink-0">
                                     <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
                                     ONLINE
                                 </span>
@@ -113,7 +113,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="pt-8 border-t border-[#F5F5F5]/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[#F5F5F5]/50 text-sm">
+                <div className="pt-6 sm:pt-8 border-t border-[#F5F5F5]/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 sm:gap-4 text-[#F5F5F5]/50 text-xs sm:text-sm">
                     <p>© {year} JunubBTC Inc. · MIT Licensed · Open Source.</p>
                     <p>Juba, South Sudan</p>
                 </div>

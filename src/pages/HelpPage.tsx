@@ -60,16 +60,16 @@ export default function HelpPage() {
             intro="Common questions, real answers, and the fastest ways to reach a human. JunubBTC is a small, open-source project — we read every message."
         >
             {/* Contact cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 sm:mb-12">
                 <a
                     href="mailto:help@junubbtc.app"
-                    className="bg-black rounded-2xl p-6 hover:bg-black/80 transition-colors duration-200 group"
+                    className="bg-black rounded-2xl p-5 sm:p-6 hover:bg-black/80 transition-colors duration-200 group"
                 >
-                    <Mail className="w-6 h-6 text-[#F7931A] mb-4" />
-                    <h3 className="text-[#F5F5F5] text-xl font-medium mb-2">
+                    <Mail className="w-6 h-6 text-[#F7931A] mb-3 sm:mb-4" />
+                    <h3 className="text-[#F5F5F5] text-lg sm:text-xl font-medium mb-2">
                         Email support
                     </h3>
-                    <p className="text-[#F5F5F5]/60 text-sm">
+                    <p className="text-[#F5F5F5]/60 text-sm break-words">
                         help@junubbtc.app — we reply within 24 hours.
                     </p>
                 </a>
@@ -77,10 +77,10 @@ export default function HelpPage() {
                     href="https://t.me/junubbtc"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-black rounded-2xl p-6 hover:bg-black/80 transition-colors duration-200 group"
+                    className="bg-black rounded-2xl p-5 sm:p-6 hover:bg-black/80 transition-colors duration-200 group"
                 >
-                    <MessageSquare className="w-6 h-6 text-[#F7931A] mb-4" />
-                    <h3 className="text-[#F5F5F5] text-xl font-medium mb-2">
+                    <MessageSquare className="w-6 h-6 text-[#F7931A] mb-3 sm:mb-4" />
+                    <h3 className="text-[#F5F5F5] text-lg sm:text-xl font-medium mb-2">
                         Telegram community
                     </h3>
                     <p className="text-[#F5F5F5]/60 text-sm">
@@ -91,10 +91,10 @@ export default function HelpPage() {
                     href="https://github.com/junubbtc"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-black rounded-2xl p-6 hover:bg-black/80 transition-colors duration-200 group"
+                    className="bg-black rounded-2xl p-5 sm:p-6 hover:bg-black/80 transition-colors duration-200 group"
                 >
-                    <BookOpen className="w-6 h-6 text-[#F7931A] mb-4" />
-                    <h3 className="text-[#F5F5F5] text-xl font-medium mb-2">
+                    <BookOpen className="w-6 h-6 text-[#F7931A] mb-3 sm:mb-4" />
+                    <h3 className="text-[#F5F5F5] text-lg sm:text-xl font-medium mb-2">
                         Open-source docs
                     </h3>
                     <p className="text-[#F5F5F5]/60 text-sm">
@@ -104,7 +104,7 @@ export default function HelpPage() {
             </div>
 
             <h2
-                className="text-[#F5F5F5] text-3xl md:text-4xl font-medium mb-6"
+                className="text-[#F5F5F5] text-2xl sm:text-3xl md:text-4xl font-medium mb-5 sm:mb-6"
                 style={{ letterSpacing: '-0.03em' }}
             >
                 Frequently asked
@@ -121,11 +121,11 @@ export default function HelpPage() {
                             <button
                                 type="button"
                                 onClick={() => setOpenIdx(open ? null : idx)}
-                                className="w-full flex items-center justify-between gap-6 px-6 md:px-8 py-5 text-left"
+                                className="w-full flex items-center justify-between gap-4 sm:gap-6 px-5 sm:px-6 md:px-8 py-4 sm:py-5 text-left"
                                 aria-expanded={open}
                             >
                                 <span
-                                    className="text-black text-lg md:text-xl font-medium"
+                                    className="text-black text-base sm:text-lg md:text-xl font-medium"
                                     style={{ letterSpacing: '-0.01em' }}
                                 >
                                     {f.q}
@@ -136,8 +136,8 @@ export default function HelpPage() {
                                 />
                             </button>
                             {open && (
-                                <div className="px-6 md:px-8 pb-6 -mt-1">
-                                    <p className="text-black/70 text-base leading-relaxed max-w-3xl">
+                                <div className="px-5 sm:px-6 md:px-8 pb-5 sm:pb-6 -mt-1">
+                                    <p className="text-black/70 text-sm sm:text-base leading-relaxed max-w-3xl">
                                         {f.a}
                                     </p>
                                 </div>

@@ -26,21 +26,21 @@ export default function BridgeCalculatorSection() {
     }, [sats]);
 
     return (
-        <section className="bg-[#F7F7F7] px-6 py-24 border-t border-black/10">
+        <section className="bg-[#F7F7F7] px-4 sm:px-6 py-16 sm:py-20 md:py-24 border-t border-black/10">
             <div className="max-w-[88rem] mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 items-end">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-10 sm:mb-12 items-end">
                     <div>
                         <p className="text-black/60 text-sm mb-2">
                             Interactive Bridge App
                         </p>
                         <h2
-                            className="text-black text-4xl md:text-5xl font-medium leading-tight"
+                            className="text-black text-3xl sm:text-4xl md:text-5xl font-medium leading-tight"
                             style={{ letterSpacing: '-0.03em' }}
                         >
                             Conversion calculator.
                         </h2>
                     </div>
-                    <p className="text-black/70 text-lg leading-relaxed max-w-md">
+                    <p className="text-black/70 text-base sm:text-lg leading-relaxed max-w-md">
                         Instantly calculate Lightning to MoMo payouts. JunubBTC quotes the
                         rate live and only moves funds when your wallet signs the invoice —
                         no custody, no waiting.
@@ -49,7 +49,7 @@ export default function BridgeCalculatorSection() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
                     {/* LEFT: input card */}
-                    <div className="lg:col-span-3 bg-white rounded-2xl p-8 md:p-10 flex flex-col gap-7 border border-black/5">
+                    <div className="lg:col-span-3 bg-white rounded-2xl p-6 sm:p-8 md:p-10 flex flex-col gap-6 sm:gap-7 border border-black/5">
                         {/* Amount input */}
                         <div>
                             <label className="block text-black/60 text-sm mb-3">
@@ -63,15 +63,15 @@ export default function BridgeCalculatorSection() {
                                     onChange={(e) =>
                                         setSats(e.target.value.replace(/[^\d.,]/g, ''))
                                     }
-                                    className="flex-1 bg-transparent text-4xl md:text-5xl font-medium text-black outline-none placeholder-black/30"
+                                    className="min-w-0 flex-1 bg-transparent text-3xl sm:text-4xl md:text-5xl font-medium text-black outline-none placeholder-black/30"
                                     style={{ letterSpacing: '-0.03em' }}
                                     placeholder="0"
                                 />
-                                <span className="text-black/60 text-base font-medium uppercase tracking-wide">
+                                <span className="text-black/60 text-sm sm:text-base font-medium uppercase tracking-wide">
                                     Sats
                                 </span>
                             </div>
-                            <div className="flex items-center gap-2 mt-3 text-black/60 text-sm">
+                            <div className="flex items-center gap-2 mt-3 text-black/60 text-xs sm:text-sm flex-wrap">
                                 <Zap className="w-4 h-4 text-[#F7931A]" />
                                 Rate standard:{' '}
                                 <span className="text-black font-medium">
@@ -86,7 +86,7 @@ export default function BridgeCalculatorSection() {
                                 MoMo destination account
                             </label>
                             <div className="flex items-center gap-2 border-b border-black/10 pb-3">
-                                <span className="inline-flex items-center gap-2 text-black font-medium">
+                                <span className="inline-flex items-center gap-2 text-black font-medium shrink-0">
                                     <Smartphone className="w-4 h-4 text-black/60" />
                                     +211
                                 </span>
@@ -94,7 +94,7 @@ export default function BridgeCalculatorSection() {
                                     type="tel"
                                     value={momo}
                                     onChange={(e) => setMomo(e.target.value)}
-                                    className="flex-1 bg-transparent text-black outline-none placeholder-black/30"
+                                    className="min-w-0 flex-1 bg-transparent text-black outline-none placeholder-black/30"
                                     placeholder="92 345 6789"
                                 />
                             </div>
@@ -107,7 +107,7 @@ export default function BridgeCalculatorSection() {
                                 <button
                                     type="button"
                                     onClick={() => setProvider('mtn')}
-                                    className={`px-5 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${provider === 'mtn'
+                                    className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 ${provider === 'mtn'
                                         ? 'bg-black text-[#F5F5F5]'
                                         : 'text-black/60 hover:text-black'
                                         }`}
@@ -117,7 +117,7 @@ export default function BridgeCalculatorSection() {
                                 <button
                                     type="button"
                                     onClick={() => setProvider('mgurush')}
-                                    className={`px-5 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${provider === 'mgurush'
+                                    className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 ${provider === 'mgurush'
                                         ? 'bg-black text-[#F5F5F5]'
                                         : 'text-black/60 hover:text-black'
                                         }`}
@@ -129,21 +129,21 @@ export default function BridgeCalculatorSection() {
                     </div>
 
                     {/* RIGHT: payout card */}
-                    <div className="lg:col-span-2 bg-black rounded-2xl p-8 md:p-10 flex flex-col justify-between min-h-[460px]">
+                    <div className="lg:col-span-2 bg-black rounded-2xl p-6 sm:p-8 md:p-10 flex flex-col justify-between gap-8 min-h-[360px] sm:min-h-[460px]">
                         <div>
                             <p className="text-[#F5F5F5]/60 text-sm mb-2">
                                 Local payout estimate
                             </p>
                             <div className="flex items-baseline gap-3 flex-wrap">
                                 <span
-                                    className="text-[#F5F5F5] text-5xl md:text-6xl font-medium"
+                                    className="text-[#F5F5F5] text-4xl sm:text-5xl md:text-6xl font-medium break-all"
                                     style={{ letterSpacing: '-0.04em' }}
                                 >
                                     {formatNumber(sspOut)}
                                 </span>
                                 <span className="text-[#F5F5F5]/60 text-base">SSP</span>
                             </div>
-                            <p className="text-[#F5F5F5]/60 text-sm mt-3">
+                            <p className="text-[#F5F5F5]/60 text-xs sm:text-sm mt-3 break-words">
                                 South Sudanese Pound ·{' '}
                                 {provider === 'mtn' ? 'MTN MoMo' : 'mGURUSH'} +211{' '}
                                 {momo || '—'}
@@ -151,16 +151,16 @@ export default function BridgeCalculatorSection() {
                         </div>
 
                         <div className="flex flex-col gap-5">
-                            <p className="text-[#F5F5F5]/60 text-sm leading-relaxed">
+                            <p className="text-[#F5F5F5]/60 text-xs sm:text-sm leading-relaxed">
                                 Settles instantly on payment of the Lightning invoice. No
                                 custody held.
                             </p>
                             <button
                                 type="button"
-                                className="inline-flex items-center justify-between gap-3 bg-[#F7931A] hover:bg-[#E47A0E] text-[#F5F5F5] text-base font-medium pl-6 pr-2 py-2 rounded-full transition-colors duration-200"
+                                className="inline-flex items-center justify-between gap-3 bg-[#F7931A] hover:bg-[#E47A0E] text-[#F5F5F5] text-sm sm:text-base font-medium pl-4 sm:pl-6 pr-2 py-2 rounded-full transition-colors duration-200"
                             >
-                                Initiate non-custodial handoff
-                                <span className="bg-[#F5F5F5] rounded-full p-2 flex items-center justify-center">
+                                <span className="text-left">Initiate non-custodial handoff</span>
+                                <span className="bg-[#F5F5F5] rounded-full p-2 flex items-center justify-center shrink-0">
                                     <ArrowRight className="w-4 h-4 text-black" />
                                 </span>
                             </button>
