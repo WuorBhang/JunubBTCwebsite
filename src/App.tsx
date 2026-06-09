@@ -5,7 +5,7 @@ import NewsPage from './pages/NewsPage';
 import HelpPage from './pages/HelpPage';
 import MomoPage from './pages/MomoPage';
 import LightningPage from './pages/LightningPage';
-import NetworkPage from './pages/NetworkPage';
+// import NetworkPage from './pages/NetworkPage';
 import { useHistoryRoute } from './lib/router';
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
                     {page === 'help' && <HelpPage />}
                     {page === 'momo' && <MomoPage />}
                     {page === 'lightning' && <LightningPage />}
-                    {page === 'network' && <NetworkPage />}
+                    {/* {page === 'network' && <NetworkPage />} */}
                 </>
             )}
             <Footer />

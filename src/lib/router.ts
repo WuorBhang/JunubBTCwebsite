@@ -6,7 +6,7 @@ export const PAGES: Page[] = ['network', 'lightning', 'momo', 'help', 'news'];
 
 export const PAGE_LABEL: Record<Page, string> = {
     home: 'Home',
-    network: 'Network',
+    // network: 'Network',
     lightning: 'Lightning',
     momo: 'MoMo',
     help: 'Help',
