@@ -114,7 +114,7 @@ export default function Footer() {
                 </div>
 
                 <div className="pt-6 sm:pt-8 border-t border-[#F5F5F5]/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 sm:gap-4 text-[#F5F5F5]/50 text-xs sm:text-sm">
-                    <p>© {year} JunubBTC Inc. · MIT Licensed · Open Source.</p>
+                    <p>© {year} JunubBTC Inc. · Open Source.</p>
                     <p>Juba, South Sudan</p>
                 </div>
             </div>
